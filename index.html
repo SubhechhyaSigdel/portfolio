@@ -24,6 +24,12 @@
         >
           Subhechhya Sigdel
         </div>
+
+        <!-- Hamburger toggle -->
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+        <!-- Navigation Links -->
         <div class="nav-links">
           <a href="#hero" class="nav-link">Home</a>
           <a href="#about" class="nav-link">About</a>
@@ -110,41 +116,77 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
-      <h2>Tech Stack & Skills</h2>
-      <p class="skills-intro">
-        Here are the technologies and languages I’ve worked with:
-      </p>
+    <section id="skills" class="skills-section">
+      <h2 class="section-title">Tech Stack & Skills</h2>
+
+      <div class="circle-row">
+        <!-- Frontend Circle -->
+        <div class="circle-wrapper">
+          <h3>Frontend</h3>
+          <div class="circle-container spinning-circle">
+            <div class="icon" style="--i: 0">
+              <img src="logos/html.png" alt="HTML" /><span>HTML</span>
+            </div>
+            <div class="icon" style="--i: 1">
+              <img src="logos/css.png" alt="CSS" /><span>CSS</span>
+            </div>
+            <div class="icon" style="--i: 2">
+              <img src="logos/bootstrap.png" alt="Bootstrap" /><span
+                >Bootstrap</span
+              >
+            </div>
+            <div class="icon" style="--i: 3">
+              <img src="logos/tailwindcss.png" alt="TailwindCSS" /><span
+                >TailwindCSS</span
+              >
+            </div>
+            <div class="icon" style="--i: 4">
+              <img src="logos/javascript.png" alt="JavaScript" /><span
+                >JavaScript</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Programming Languages Circle -->
+        <div class="circle-wrapper">
+          <h3>Programming Languages</h3>
+          <div class="circle-container spinning-circle reverse-spin">
+            <div class="icon" style="--i: 0">
+              <img src="logos/c.png" alt="C" /><span>C</span>
+            </div>
+            <div class="icon" style="--i: 1">
+              <img src="logos/c++.png" alt="C++" /><span>C++</span>
+            </div>
+            <div class="icon" style="--i: 2">
+              <img src="logos/sharp.svg" alt="C#" /><span>C#</span>
+            </div>
+            <div class="icon" style="--i: 3">
+              <img src="logos/php.png" alt="PHP" /><span>PHP</span>
+            </div>
+            <div class="icon" style="--i: 4">
+              <img src="logos/xml.png" alt="XML" /><span>XML</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Platforms continuous sliding -->
       <div class="skills-wrapper">
-        <!-- Frontend Skills -->
-        <div class="skill-category">
-          <h3>💻 Frontend</h3>
-          <div class="skill-grid">
-            <div class="skill-item">HTML</div>
-            <div class="skill-item">CSS</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">XML</div>
-          </div>
-        </div>
+        <h3>Tools & Platforms</h3>
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="skill-item">
+              <img src="logos/git.png" alt="Git" /><span>Git</span>
+            </div>
 
-        <!-- Programming Languages -->
-        <div class="skill-category">
-          <h3>🛠️ Programming Languages</h3>
-          <div class="skill-grid">
-            <div class="skill-item">C</div>
-            <div class="skill-item">C++</div>
-            <div class="skill-item">C#</div>
-            <div class="skill-item">PHP</div>
-          </div>
-        </div>
+            <div class="skill-item">
+              <img src="logos/github.png" alt="GitHub" /><span>GitHub</span>
+            </div>
 
-        <!-- Tools & Platforms -->
-        <div class="skill-category">
-          <h3>📦 Tools & Platforms</h3>
-          <div class="skill-grid">
-            <div class="skill-item">Git</div>
-            <div class="skill-item">GitHub</div>
-            <div class="skill-item">Canva</div>
+            <div class="skill-item">
+              <img src="logos/canva.png" alt="Canva" /><span>Canva</span>
+            </div>
           </div>
         </div>
       </div>
@@ -216,6 +258,14 @@
 
       window.addEventListener("scroll", activateNavLink);
       window.addEventListener("load", activateNavLink);
+
+      //auto-close menu on click
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("menu-toggle").checked = false;
+        });
+      });
     </script>
   </body>
 </html>
