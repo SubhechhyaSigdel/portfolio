@@ -1,17 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Subhechhya Sigdel</title>
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <!-- NAVIGATION -->
+
     <nav>
       <div class="nav-container">
         <div
@@ -20,38 +26,46 @@
           role="button"
           aria-label="Scroll to top"
           onclick="window.scrollTo({top:0,behavior:'smooth'})"
-          onkeydown="if(event.key==='Enter') window.scrollTo({top:0,behavior:'smooth'})"
-        >
+          onkeydown="if(event.key==='Enter') window.scrollTo({top:0,behavior:'smooth'})">
           Subhechhya Sigdel
         </div>
 
         <!-- Hamburger toggle -->
+
         <input type="checkbox" id="menu-toggle" />
+
         <label for="menu-toggle" class="hamburger">&#9776;</label>
 
         <!-- Navigation Links -->
+
         <div class="nav-links">
           <a href="#hero" class="nav-link">Home</a>
+
           <a href="#about" class="nav-link">About</a>
+
           <a href="#projects" class="nav-link">Projects</a>
+
           <a href="#skills" class="nav-link">Skills</a>
+
           <a href="#contact" class="nav-link">Contact</a>
         </div>
       </div>
     </nav>
 
     <!-- HERO -->
+
     <section id="hero" class="hero">
       <div class="hero-text">
         <h1>Hi, I’m Subhechhya</h1>
+
         <p>
           A BSc CSIT student from Nepal passionate about web development,
           software engineering, and creating impactful solutions.
         </p>
+
         <button
           class="btn-primary"
-          onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})"
-        >
+          onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
           Contact Me
         </button>
       </div>
@@ -61,24 +75,27 @@
           alt="Photo of Subhechhya Sigdel"
           loading="lazy"
           width="300"
-          height="300"
-        />
+          height="300" />
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
+
+    <section id="about" class="section-card">
       <h2>About Me</h2>
+
       <div class="about-container">
         <div class="about-text">
           <h3 class="typing-text">
             Hi, I'm <span class="typewriter">Subhechhya Sigdel</span>
           </h3>
+
           <p>
             A CSIT student from Nepal, passionate about tech, clean code, and
             beautiful design. I love building websites that are simple, smart,
             and user-friendly.
           </p>
+
           <p>Always learning. Always creating.</p>
 
           <div class="resume-buttons">
@@ -86,10 +103,10 @@
               href="Subhechhya Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-primary"
-            >
+              class="btn-primary">
               View Resume
             </a>
+
             <a href="Subhechhya Resume.pdf" download class="btn-primary">
               Download PDF
             </a>
@@ -101,137 +118,155 @@
     <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects I’ve Built</h2>
-      <div class="projects-grid coming-soon">
-        <p
-          style="
-            font-size: 1.2rem;
-            text-align: center;
-            width: 100%;
-            color: #555;
-          "
-        >
-          Projects Coming Soon... Stay Tuned!
-        </p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Coming Soon 🚀</h3>
+          <p>Exciting projects are on the way! Stay tuned for updates.</p>
+        </div>
+        <div class="project-card">
+          <h3>Coming Soon 🌟</h3>
+          <p>Working on something amazing. Check back soon!</p>
+        </div>
+        <div class="project-card">
+          <h3>Coming Soon 💡</h3>
+          <p>New projects will be added here very shortly.</p>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
+
     <section id="skills" class="skills-section">
       <h2 class="section-title">Tech Stack & Skills</h2>
 
-      <div class="circle-row">
-        <!-- Frontend Circle -->
-        <div class="circle-wrapper">
-          <h3>Frontend</h3>
-          <div class="circle-container spinning-circle">
-            <div class="icon" style="--i: 0">
-              <img src="logos/html.png" alt="HTML" /><span>HTML</span>
-            </div>
-            <div class="icon" style="--i: 1">
-              <img src="logos/css.png" alt="CSS" /><span>CSS</span>
-            </div>
-            <div class="icon" style="--i: 2">
-              <img src="logos/bootstrap.png" alt="Bootstrap" /><span
-                >Bootstrap</span
-              >
-            </div>
-            <div class="icon" style="--i: 3">
-              <img src="logos/tailwindcss.png" alt="TailwindCSS" /><span
-                >TailwindCSS</span
-              >
-            </div>
-            <div class="icon" style="--i: 4">
-              <img src="logos/javascript.png" alt="JavaScript" /><span
-                >JavaScript</span
-              >
-            </div>
-          </div>
-        </div>
+      <!-- Frontend Skills -->
 
-        <!-- Programming Languages Circle -->
-        <div class="circle-wrapper">
-          <h3>Programming Languages</h3>
-          <div class="circle-container spinning-circle reverse-spin">
-            <div class="icon" style="--i: 0">
-              <img src="logos/c.png" alt="C" /><span>C</span>
-            </div>
-            <div class="icon" style="--i: 1">
-              <img src="logos/c++.png" alt="C++" /><span>C++</span>
-            </div>
-            <div class="icon" style="--i: 2">
-              <img src="logos/sharp.svg" alt="C#" /><span>C#</span>
-            </div>
-            <div class="icon" style="--i: 3">
-              <img src="logos/php.png" alt="PHP" /><span>PHP</span>
-            </div>
-            <div class="icon" style="--i: 4">
-              <img src="logos/xml.png" alt="XML" /><span>XML</span>
-            </div>
+      <div class="skills-wrapper scroll-left">
+        <h3>Frontend</h3>
+
+        <div class="scroll-container">
+          <div class="skill-item">
+            <img src="logos/html.png" alt="HTML" /><span>HTML</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/css.png" alt="CSS" /><span>CSS</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/bootstrap.png" alt="Bootstrap" /><span
+              >Bootstrap</span
+            >
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/tailwindcss.png" alt="Tailwind" /><span
+              >TailwindCSS</span
+            >
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/javascript.png" alt="JavaScript" /><span
+              >JavaScript</span
+            >
           </div>
         </div>
       </div>
 
-      <!-- Tools & Platforms continuous sliding -->
-      <div class="skills-wrapper">
+      <!-- Programming Languages -->
+
+      <div class="skills-wrapper scroll-right">
+        <h3>Programming Languages</h3>
+
+        <div class="scroll-container">
+          <div class="skill-item">
+            <img src="logos/c.png" alt="C" /><span>C</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/c++.png" alt="C++" /><span>C++</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/sharp.svg" alt="C#" /><span>C#</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/php.png" alt="PHP" /><span>PHP</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/xml.png" alt="XML" /><span>XML</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Platforms -->
+
+      <div class="skills-wrapper scroll-left">
         <h3>Tools & Platforms</h3>
-        <div class="slider-container">
-          <div class="slider-track">
-            <div class="skill-item">
-              <img src="logos/git.png" alt="Git" /><span>Git</span>
-            </div>
 
-            <div class="skill-item">
-              <img src="logos/github.png" alt="GitHub" /><span>GitHub</span>
-            </div>
+        <div class="scroll-container">
+          <div class="skill-item">
+            <img src="logos/github.png" alt="GitHub" /><span>GitHub</span>
+          </div>
 
-            <div class="skill-item">
-              <img src="logos/canva.png" alt="Canva" /><span>Canva</span>
-            </div>
+          <div class="skill-item">
+            <img src="logos/git.png" alt="Git" /><span>Git</span>
+          </div>
+
+          <div class="skill-item">
+            <img src="logos/canva.png" alt="Canva" /><span>Canva</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      <p>You can reach me by email or connect with me on social media.</p>
-      <a href="mailto:subhechhyasigdel6@gmail.com" class="btn-primary"
-        >Email Me</a
-      >
-      <div class="social-links">
-        <a
-          href="https://www.facebook.com/profile.php?id=61555576095199"
-          target="_blank"
-          aria-label="Facebook"
-          class="facebook"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a
-          href="https://github.com/SubhechhyaSigdel"
-          target="_blank"
-          aria-label="GitHub"
-          class="github"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/subhechhya-sigdel-4281b0314/"
-          target="_blank"
-          aria-label="LinkedIn"
-          class="linkedin"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </section>
+    <div class="contact-wrapper">
+      <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
 
+        <p>You can reach me by email or connect with me on social media.</p>
+
+        <a href="mailto:subhechhyasigdel6@gmail.com" class="btn-primary"
+          >Email Me</a
+        >
+
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/profile.php?id=61555576095199"
+            target="_blank"
+            aria-label="Facebook"
+            class="facebook"
+            rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a
+            href="https://github.com/SubhechhyaSigdel"
+            target="_blank"
+            aria-label="GitHub"
+            class="github"
+            rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/subhechhya-sigdel-4281b0314/"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="linkedin"
+            rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </section>
+    </div>
     <script>
       const sections = document.querySelectorAll("section");
+
       const navLinks = document.querySelectorAll(".nav-link");
 
       function activateNavLink() {
@@ -239,7 +274,9 @@
 
         sections.forEach((section) => {
           const sectionTop = section.offsetTop - 60; // offset for fixed nav height if any
+
           const sectionHeight = section.offsetHeight;
+
           if (
             window.scrollY >= sectionTop &&
             window.scrollY < sectionTop + sectionHeight
@@ -250,6 +287,7 @@
 
         navLinks.forEach((link) => {
           link.classList.remove("active");
+
           if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
           }
@@ -257,6 +295,7 @@
       }
 
       window.addEventListener("scroll", activateNavLink);
+
       window.addEventListener("load", activateNavLink);
 
       //auto-close menu on click
