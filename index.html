@@ -1,52 +1,39 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Subhechhya Sigdel</title>
-
+    <title>Subhechhya Sigdel - Full Stack Developer</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet" />
-
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
+    <!-- ANIMATED BACKGROUND -->
+    <div class="animated-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
     <!-- NAVIGATION -->
-
-    <nav>
+    <nav class="navbar">
       <div class="nav-container">
-        <div
-          class="logo"
-          tabindex="0"
-          role="button"
-          aria-label="Scroll to top"
-          onclick="window.scrollTo({top:0,behavior:'smooth'})"
-          onkeydown="if(event.key==='Enter') window.scrollTo({top:0,behavior:'smooth'})">
-          Subhechhya Sigdel
+        <div class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Subhechhya</span>
         </div>
-
-        <!-- Hamburger toggle -->
-
-        <input type="checkbox" id="menu-toggle" />
-
-        <label for="menu-toggle" class="hamburger">&#9776;</label>
-
-        <!-- Navigation Links -->
-
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
         <div class="nav-links">
-          <a href="#hero" class="nav-link">Home</a>
-
+          <a href="#hero" class="nav-link active">Home</a>
           <a href="#about" class="nav-link">About</a>
-
           <a href="#projects" class="nav-link">Projects</a>
-
           <a href="#skills" class="nav-link">Skills</a>
-
           <a href="#contact" class="nav-link">Contact</a>
         </div>
       </div>
@@ -55,288 +42,314 @@
     <!-- HERO -->
 
     <section id="hero" class="hero">
-      <div class="hero-text">
-        <h1>Hi, I’m Subhechhya</h1>
+      <div class="hero-content">
+        <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="text-gradient">Creative Developer</span>
+          <span class="block">& Problem Solver</span>
+        </h1>
 
-        <p>
-          A BSc CSIT student from Nepal passionate about web development,
-          software engineering, and creating impactful solutions.
-        </p>
-
-        <button
-          class="btn-primary"
-          onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
-          Contact Me
-        </button>
+        <p class="hero-subtitle">Building beautiful, functional web experiences with modern technologies</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+              <span>Get In Touch</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-secondary">
+              <span>View My Work</span>
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+        <div class="hero-image">
+          <div class="image-frame">
+            <img src="images/yourphoto.jpeg" alt="Subhechhya Sigdel" />
+          </div>
+        </div>
       </div>
-      <div class="hero-image">
-        <img
-          src="images/yourphoto.jpeg"
-          alt="Photo of Subhechhya Sigdel"
-          loading="lazy"
-          width="300"
-          height="300" />
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
 
-    <section id="about" class="section-card">
-      <h2>About Me</h2>
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Passionate Developer & Learner</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a <strong>BSc CSIT student from Nepal</strong> with a passion for creating elegant, user-centered digital solutions. 
+              With expertise in both frontend and backend technologies, I transform ideas into interactive experiences.
+            </p>
+            <p>
+              My approach combines <strong>clean code</strong>, <strong>modern design principles</strong>, and <strong>problem-solving mindset</strong> 
+              to deliver impactful solutions that users love.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <h3>50+</h3>
+                <p>Projects</p>
+              </div>
+              <div class="stat">
+                <h3>100%</h3>
+                <p>Dedication</p>
+              </div>
+              <div class="stat">
+                <h3>∞</h3>
+                <p>Learning</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-features">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Clean Code</h3>
+              <p>Writing maintainable, well-structured code is my priority</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3>Design Focus</h3>
+              <p>Creating beautiful interfaces that users genuinely enjoy</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Performance</h3>
+              <p>Building fast, efficient applications that scale</p>
+            </div>
+          </div>
+        </div>
+        <div class="resume-section">
+          <a href="SubhechhyaSigdel_Resume_Sept.pdf" target="_blank" class="btn btn-primary">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+          <a href="SubhechhyaSigdel_Resume_Sept.pdf" class="btn btn-outline">
+            <i class="fas fa-eye"></i> View Resume
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <div class="about-container">
-        <div class="about-text">
-          <h3 class="typing-text">
-            Hi, I'm <span class="typewriter">Subhechhya Sigdel</span>
-          </h3>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🚀</div>
+              <span class="project-label">Web Development</span>
+            </div>
+            <h3>Coming Soon</h3>
+            <p>Exciting web applications are in development. Building innovative solutions with modern tech stack and best practices.</p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">✨</div>
+              <span class="project-label">Full Stack</span>
+            </div>
+            <h3>Amazing Work</h3>
+            <p>Creating groundbreaking full-stack applications with seamless user experiences and robust backend solutions.</p>
+            <div class="project-tags">
+              <span class="tag">Full Stack</span>
+              <span class="tag">Backend</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">💡</div>
+              <span class="project-label">Creative Design</span>
+            </div>
+            <h3>Innovation Hub</h3>
+            <p>Innovative solutions combining cutting-edge technology with creative design thinking and user-centered approach.</p>
+            <div class="project-tags">
+              <span class="tag">Design</span>
+              <span class="tag">UX/UI</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects-footer">
+          <p>🚀 More projects coming soon! Follow my GitHub for latest updates.</p>
+        </div>
+      </div>
+    </section>
 
-          <p>
-            A CSIT student from Nepal, passionate about tech, clean code, and
-            beautiful design. I love building websites that are simple, smart,
-            and user-friendly.
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Expertise</span>
+          <h2 class="section-title">Tech Stack & Skills</h2>
+        </div>
+
+        <div class="skills-categories">
+          <!-- Frontend -->
+          <div class="skill-category">
+            <h3 class="category-title">
+              <i class="fas fa-mobile-alt"></i> Frontend Development
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="logos/html.png" alt="HTML" />
+                <span>HTML</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/css.png" alt="CSS" />
+                <span>CSS</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/javascript.png" alt="JavaScript" />
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/react.png" alt="React" />
+                <span>React</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/bootstrap.png" alt="Bootstrap" />
+                <span>Bootstrap</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/tailwindcss.png" alt="Tailwind" />
+                <span>Tailwind</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <h3 class="category-title">
+              <i class="fas fa-terminal"></i> Programming Languages
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="logos/c.png" alt="C" />
+                <span>C</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/c++.png" alt="C++" />
+                <span>C++</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/sharp.svg" alt="C#" />
+                <span>C#</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/php.png" alt="PHP" />
+                <span>PHP</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/xml.png" alt="XML" />
+                <span>XML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="skill-category">
+            <h3 class="category-title">
+              <i class="fas fa-tools"></i> Tools & Platforms
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <img src="logos/github.png" alt="GitHub" />
+                <span>GitHub</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/git.png" alt="Git" />
+                <span>Git</span>
+              </div>
+              <div class="skill-item">
+                <img src="logos/canva.png" alt="Canva" />
+                <span>Canva</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Let's Create Something Amazing</h2>
+        </div>
+        <div class="contact-content">
+          <p class="contact-subtitle">
+            I'm always interested in hearing about new projects and opportunities. 
+            Feel free to reach out through any of these channels.
           </p>
-
-          <p>Always learning. Always creating.</p>
-
-          <div class="resume-buttons">
-            <a
-              href="SubhechhyaSigdel_Resume_Sept.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary">
-              View Resume
+          <div class="contact-methods">
+            <a href="mailto:subhechhyasigdel6@gmail.com" class="contact-btn">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>subhechhyasigdel6@gmail.com</p>
+              </div>
             </a>
-
-            <a
-              href="SubhechhyaSigdel_Resume_Sept.pdf"
-              download
-              class="btn-primary">
-              Download PDF
+            <a href="https://github.com/SubhechhyaSigdel" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <h3>GitHub</h3>
+                <p>@SubhechhyaSigdel</p>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/subhechhya-sigdel-4281b0314/" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div>
+                <h3>LinkedIn</h3>
+                <p>Subhechhya Sigdel</p>
+              </div>
+            </a>
+          </div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61555576095199" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/SubhechhyaSigdel" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/subhechhya-sigdel-4281b0314/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-header">
-        <h2>Projects I've Built</h2>
-        <p class="section-subtitle">
-          Showcasing my latest work and innovations
-        </p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Subhechhya Sigdel. All rights reserved. | Made with <span class="heart">❤</span> using HTML, CSS & JavaScript</p>
       </div>
+    </footer>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-icon">🚀</div>
-          <h3>Coming Soon</h3>
-          <p>
-            Exciting projects are on the way! Innovative solutions in
-            development.
-          </p>
-          <div class="project-badge">Web Development</div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon">🌟</div>
-          <h3>Amazing Work</h3>
-          <p>
-            Building something incredible! Stay tuned for groundbreaking
-            releases.
-          </p>
-          <div class="project-badge">Full Stack</div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon">💡</div>
-          <h3>Innovation</h3>
-          <p>
-            Creative solutions with cutting-edge technology. Updates coming very
-            soon.
-          </p>
-          <div class="project-badge">Creative Design</div>
-        </div>
-      </div>
-
-      <div class="projects-cta">
-        <p>
-          More projects coming soon. Subscribe to my social media for updates!
-        </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-
-    <section id="skills" class="skills-section">
-      <h2 class="section-title">Tech Stack & Skills</h2>
-
-      <!-- Frontend Skills -->
-
-      <div class="skills-wrapper scroll-left">
-        <h3>Frontend</h3>
-
-        <div class="scroll-container">
-          <div class="skill-item">
-            <img src="logos/html.png" alt="HTML" /><span>HTML</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/css.png" alt="CSS" /><span>CSS</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/bootstrap.png" alt="Bootstrap" /><span
-              >Bootstrap</span
-            >
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/tailwindcss.png" alt="Tailwind" /><span
-              >TailwindCSS</span
-            >
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/javascript.png" alt="JavaScript" /><span
-              >JavaScript</span
-            >
-          </div>
-          <div class="skill-item">
-            <img src="logos/react.png" alt="React" /><span>React</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Programming Languages -->
-
-      <div class="skills-wrapper scroll-right">
-        <h3>Programming Languages</h3>
-
-        <div class="scroll-container">
-          <div class="skill-item">
-            <img src="logos/c.png" alt="C" /><span>C</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/c++.png" alt="C++" /><span>C++</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/sharp.svg" alt="C#" /><span>C#</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/php.png" alt="PHP" /><span>PHP</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/xml.png" alt="XML" /><span>XML</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tools & Platforms -->
-
-      <div class="skills-wrapper scroll-left">
-        <h3>Tools & Platforms</h3>
-
-        <div class="scroll-container">
-          <div class="skill-item">
-            <img src="logos/github.png" alt="GitHub" /><span>GitHub</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/git.png" alt="Git" /><span>Git</span>
-          </div>
-
-          <div class="skill-item">
-            <img src="logos/canva.png" alt="Canva" /><span>Canva</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <div class="contact-wrapper">
-      <section id="contact" class="contact-section">
-        <h2>Get In Touch</h2>
-
-        <p>You can reach me by email or connect with me on social media.</p>
-
-        <a href="mailto:subhechhyasigdel6@gmail.com" class="btn-primary"
-          >Email Me</a
-        >
-
-        <div class="social-links">
-          <a
-            href="https://www.facebook.com/profile.php?id=61555576095199"
-            target="_blank"
-            aria-label="Facebook"
-            class="facebook"
-            rel="noopener noreferrer">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-
-          <a
-            href="https://github.com/SubhechhyaSigdel"
-            target="_blank"
-            aria-label="GitHub"
-            class="github"
-            rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/subhechhya-sigdel-4281b0314/"
-            target="_blank"
-            aria-label="LinkedIn"
-            class="linkedin"
-            rel="noopener noreferrer">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </section>
-    </div>
-    <script>
-      const sections = document.querySelectorAll("section");
-
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      function activateNavLink() {
-        let current = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 60; // offset for fixed nav height if any
-
-          const sectionHeight = section.offsetHeight;
-
-          if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-          ) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", activateNavLink);
-
-      window.addEventListener("load", activateNavLink);
-
-      //auto-close menu on click
-
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("click", () => {
-          document.getElementById("menu-toggle").checked = false;
-        });
-      });
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>
