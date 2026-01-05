@@ -1060,10 +1060,14 @@ body {
 }
 
 .project-card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.15), transparent 80%);
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.15),
+    transparent 80%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -1075,13 +1079,18 @@ body {
 }
 
 .feature-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
 }
@@ -1097,7 +1106,7 @@ body {
 }
 
 .skill-item::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: 0;
@@ -1136,12 +1145,7 @@ body {
 
 /* ===== GRADIENT TEXT ANIMATION ===== */
 .text-gradient {
-  background: linear-gradient(
-    90deg,
-    #6366f1 0%,
-    #ec4899 50%,
-    #6366f1 100%
-  );
+  background: linear-gradient(90deg, #6366f1 0%, #ec4899 50%, #6366f1 100%);
   background-size: 200% auto;
   animation: gradientShift 3s ease infinite;
   -webkit-background-clip: text;
@@ -1150,9 +1154,15 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% center; }
-  50% { background-position: 100% center; }
-  100% { background-position: 0% center; }
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 /* ===== ENHANCED SECTION TRANSITIONS ===== */
@@ -1161,7 +1171,7 @@ section {
 }
 
 section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1173,8 +1183,12 @@ section::before {
 }
 
 @keyframes sectionDivider {
-  from { opacity: 0; }
-  to { opacity: 0.3; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
