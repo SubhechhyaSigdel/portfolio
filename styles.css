@@ -80,116 +80,9 @@ body {
 }
 
 /* ===== THEME TOGGLE ===== */
-.theme-toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-}
-
-.theme-toggle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--gradient-1);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-  transition: var(--transition);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1) rotate(20deg);
-  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
-}
-
-.theme-menu {
-  position: absolute;
-  top: 65px;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  display: none;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  min-width: 180px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.theme-menu.active {
-  display: grid;
-}
-
-.theme-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 0.85rem;
-  color: var(--text-primary);
-  background: var(--bg-secondary);
-}
-
-.theme-option:hover {
-  background: var(--gradient-light);
-  transform: translateY(-2px);
-}
-
-.theme-option.active {
-  background: var(--gradient-1);
-  color: white;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-}
-
-.theme-preview {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-.default-theme {
-  background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
-}
-
-.ocean-theme {
-  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
-}
-
-.sunset-theme {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-}
-
-.forest-theme {
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-}
-
-.dark-theme {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  border-color: #4b5563;
-}
-
 /* ===== THEME-SPECIFIC TEXT & COLOR OVERRIDES ===== */
 
 /* DEFAULT THEME - Purple & Pink */
-[data-theme="default"],
-[data-theme="default"] body,
 :root {
   --theme-text-color: #1e293b;
   --theme-text-light: #64748b;
@@ -279,13 +172,6 @@ body {
   padding: 1rem 0;
   transition: var(--transition);
 }
-
-
-
-
-
-
-
 
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.95);
@@ -1457,24 +1343,13 @@ body {
 
 /* ===== THEME-SPECIFIC CONTACT SECTION COLORS ===== */
 
-
-
 /* ===== THEME-SPECIFIC FOOTER ===== */
-
-
-
 
 /* ===== THEME-SPECIFIC PROJECT CARDS ===== */
 
-
-
 /* ===== THEME-SPECIFIC FEATURE CARDS ===== */
 
-
-
 /* ===== THEME-SPECIFIC SKILL ITEMS ===== */
-
-
 
 /* ===== ANIMATIONS ===== */
 @keyframes slideInLeft {

@@ -1,6 +1,5 @@
 // ===== INITIALIZATION =====
 document.addEventListener("DOMContentLoaded", function () {
-  initThemeSystem();
   initNavigation();
   observeSections();
   setupScrollAnimations();
@@ -10,60 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setupMouseTracking();
   setupScrollProgress();
 });
-
-// ===== THEME SYSTEM =====
-function initThemeSystem() {
-  const themeBtn = document.getElementById("theme-btn");
-  const themeMenu = document.getElementById("theme-menu");
-  const themeOptions = document.querySelectorAll(".theme-option");
-
-  // Load saved theme
-  const savedTheme = localStorage.getItem("portfolio-theme") || "default";
-  applyTheme(savedTheme);
-  updateActiveTheme(savedTheme);
-
-  // Toggle menu
-  themeBtn.addEventListener("click", () => {
-    themeMenu.classList.toggle("active");
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".theme-toggle-container")) {
-      themeMenu.classList.remove("active");
-    }
-  });
-
-  // Apply theme on click
-  themeOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      const theme = option.getAttribute("data-theme");
-      applyTheme(theme);
-      updateActiveTheme(theme);
-      localStorage.setItem("portfolio-theme", theme);
-      themeMenu.classList.remove("active");
-
-      // Add a small animation effect
-      document.body.style.opacity = "0.95";
-      setTimeout(() => {
-        document.body.style.opacity = "1";
-      }, 100);
-    });
-  });
-}
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-}
-
-function updateActiveTheme(theme) {
-  document.querySelectorAll(".theme-option").forEach((option) => {
-    option.classList.remove("active");
-    if (option.getAttribute("data-theme") === theme) {
-      option.classList.add("active");
-    }
-  });
-}
 
 // ===== NAVIGATION =====
 function initNavigation() {
