@@ -193,10 +193,6 @@ body {
   gap: 10px;
   font-size: 1.5rem;
   font-weight: 700;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -207,6 +203,17 @@ body {
 
 .logo-icon {
   font-size: 1.8rem;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-text {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-links {
@@ -895,7 +902,7 @@ body {
 /* ===== CONTACT SECTION ===== */
 .contact {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #e6d9f8 0%, #f0e9ff 100%);
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
@@ -1319,11 +1326,11 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #f3e8ff;
+  background: #e6d9f8;
   color: #475569;
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid rgba(167, 139, 250, 0.2);
+  border-top: 1px solid rgba(167, 139, 250, 0.3);
 }
 
 .heart {
