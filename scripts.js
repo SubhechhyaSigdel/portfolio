@@ -54,16 +54,22 @@ function activateNavLink() {
   let currentSection = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 150;
     const sectionHeight = section.clientHeight;
+    const sectionBottom = sectionTop + sectionHeight;
 
-    if (
-      window.scrollY >= sectionTop &&
-      window.scrollY < sectionTop + sectionHeight
-    ) {
+    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
       currentSection = section.getAttribute("id");
     }
   });
+
+  // If at the very bottom, highlight the last section (contact)
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 100
+  ) {
+    currentSection = "contact";
+  }
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
