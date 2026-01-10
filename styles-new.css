@@ -456,9 +456,11 @@ body {
 
 .about-photo img {
   width: 200px;
-  height: 200px;
+  height: auto;
+  max-height: 280px;
   border-radius: 16px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border: 2px solid rgba(0, 212, 255, 0.3);
   box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
   transition: var(--transition);
@@ -786,7 +788,8 @@ body {
 
   .about-photo img {
     width: 150px;
-    height: 150px;
+    height: auto;
+    max-height: 220px;
   }
 
   .about-text h2 {
