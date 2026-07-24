@@ -85,7 +85,7 @@ a {
 
 .navbar.scrolled {
   background: rgba(244, 249, 252, 0.92);
-  box-shadow: 0 10px 30px rgba(73, 118, 147, 0.08);
+  box-shadow: 0 8px 22px rgba(73, 118, 147, 0.06);
 }
 
 .nav-container {
@@ -159,12 +159,12 @@ a {
 
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(18px);
-  filter: blur(3px);
+  transform: translateY(12px);
+  filter: blur(1px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.7s ease;
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.6s ease;
   will-change: opacity, transform;
 }
 

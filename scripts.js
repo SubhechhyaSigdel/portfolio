@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scrollProgress = createScrollProgress();
-  initNavigation();
-  observeReveal();
-  setupScrollEffects(scrollProgress);
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  initNavigation(prefersReducedMotion);
+  observeReveal(prefersReducedMotion);
+  setupScrollEffects(scrollProgress, prefersReducedMotion);
   addInteractions();
 });
 
-function initNavigation() {
+function initNavigation(prefersReducedMotion) {
   const navLinks = document.querySelectorAll(".nav-link");
   const menuToggle = document.getElementById("menu-toggle");
   const logo = document.querySelector(".logo");
@@ -27,24 +30,30 @@ function initNavigation() {
           menuToggle.checked = false;
         }
 
-        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        targetSection.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+          block: "start",
+        });
       }
     });
   });
 
   if (logo) {
     logo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
     });
   }
 }
 
-function observeReveal() {
+function observeReveal(prefersReducedMotion) {
   const targets = document.querySelectorAll(
     ".hero-content, .section-header, .project-card, .contact-card",
   );
 
-  if (!("IntersectionObserver" in window)) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     targets.forEach((target) => target.classList.add("is-visible"));
     return;
   }
@@ -59,19 +68,19 @@ function observeReveal() {
       });
     },
     {
-      threshold: 0.14,
-      rootMargin: "0px 0px -60px 0px",
+      threshold: 0.1,
+      rootMargin: "0px 0px -48px 0px",
     },
   );
 
   targets.forEach((target, index) => {
     target.classList.add("scroll-reveal");
-    target.style.transitionDelay = `${Math.min(index * 70, 220)}ms`;
+    target.style.transitionDelay = `${Math.min(index * 40, 140)}ms`;
     observer.observe(target);
   });
 }
 
-function setupScrollEffects(scrollProgress) {
+function setupScrollEffects(scrollProgress, prefersReducedMotion) {
   const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
@@ -113,6 +122,7 @@ function setupScrollEffects(scrollProgress) {
       const maxScroll =
         document.documentElement.scrollHeight - window.innerHeight;
       const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
+      scrollProgress.style.opacity = prefersReducedMotion ? "0" : "1";
       scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
     }
 
@@ -145,8 +155,8 @@ function createScrollProgress() {
     top: 60px;
     left: 0;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #8dd3f7, #5aa9d6);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(141, 211, 247, 0.55), rgba(90, 169, 214, 0.8));
     transform: scaleX(0);
     transform-origin: left center;
     z-index: 999;
