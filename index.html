@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,10 +7,10 @@
       content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
     <meta
       name="description"
-      content="Subhechhya Sigdel - Full Stack Developer specializing in web design, development, and problem-solving. Explore my portfolio of creative projects." />
+      content="Subhechhya Sigdel - Full Stack Developer focused on clean, minimal web experiences." />
     <meta
       name="keywords"
-      content="Full Stack Developer, Web Developer, Software Engineer, Portfolio, Subekshya, suvekshya, suvhechhya, subekhshya, suvheksha" />
+      content="Full Stack Developer, Web Developer, Portfolio, Subhechhya Sigdel" />
     <meta name="author" content="Subhechhya Sigdel" />
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="google527b6cc42317d393" />
@@ -21,7 +21,7 @@
       content="Subhechhya Sigdel - Full Stack Developer" />
     <meta
       property="og:description"
-      content="Subhechhya Sigdel - Full Stack Developer specializing in web design, development, and problem-solving." />
+      content="Subhechhya Sigdel - Full Stack Developer focused on clean, minimal web experiences." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
 
@@ -32,14 +32,14 @@
       content="Subhechhya Sigdel - Full Stack Developer" />
     <meta
       name="twitter:description"
-      content="Subhechhya Sigdel - Full Stack Developer specializing in web design, development, and problem-solving." />
+      content="Subhechhya Sigdel - Full Stack Developer focused on clean, minimal web experiences." />
 
-    <title>Subhechhya Sigdel - Full Stack Developer</title>
+    <title>Subhechhya Sigdel</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet" />
-    <link rel="stylesheet" href="styles-new.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
     <!-- Schema.org Structured Data -->
@@ -60,193 +60,107 @@
           "https://linkedin.com/in/yourprofile",
           "https://twitter.com/yourprofile"
         ],
-        "description": "Full Stack Developer specializing in web design, development, and problem-solving"
+        "description": "Full Stack Developer focused on clean, minimal web experiences"
       }
     </script>
   </head>
   <body>
-    <!-- ANIMATED BACKGROUND -->
-    <div class="animated-bg">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-      <div class="gradient-orb orb-3"></div>
-    </div>
-    <!-- NAVIGATION -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="logo">
-          <span class="logo-text">⚡ Subhechhya Sigdel</span>
+          <span class="logo-text">Subhechhya Sigdel</span>
         </div>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label for="menu-toggle" class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
         <div class="nav-links">
           <a href="#hero" class="nav-link active">Home</a>
-          <a href="#about" class="nav-link">About</a>
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- HERO -->
     <section id="hero" class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-badge">Full Stack Developer</div>
-          <h1 class="hero-title">
-            <span class="char-1">B</span><span class="char-2">u</span
-            ><span class="char-3">i</span><span class="char-4">l</span
-            ><span class="char-5">d</span><span class="char-6">.</span>
-            <br />
-            <span class="char-7">S</span><span class="char-8">h</span
-            ><span class="char-9">i</span><span class="char-10">p</span
-            ><span class="char-11">.</span>
-            <br />
-            <span class="char-12">R</span><span class="char-13">e</span
-            ><span class="char-14">p</span><span class="char-15">e</span
-            ><span class="char-16">a</span><span class="char-17">t</span
-            ><span class="char-18">.</span>
-          </h1>
-          <p class="hero-subtitle">
-            Crafting elegant APIs and web experiences with modern tech
-          </p>
-          <div class="hero-buttons">
-            <button
-              class="btn btn-primary glow-btn"
-              onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">
-              See My Work
-              <i class="fas fa-arrow-right"></i>
-            </button>
-            <button
-              class="btn btn-secondary"
-              onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
-              Get In Touch
-            </button>
-          </div>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Live Projects</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">Always Learning</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="scroll-arrow">
-          <i class="fas fa-chevron-down"></i>
+      <div class="hero-content minimal-hero">
+        <p class="hero-kicker">Full Stack Developer</p>
+        <h1>Subhechhya Sigdel</h1>
+        <p class="hero-subtitle">
+          Minimal interfaces, calm systems, clean code.
+        </p>
+        <div class="hero-buttons">
+          <a
+            href="Subhechhya_Resume.pdf"
+            target="_blank"
+            class="btn btn-primary">
+            Download Resume
+          </a>
+          <button
+            class="btn btn-secondary"
+            onclick="
+              document
+                .querySelector('#contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            Contact
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-wrapper">
-          <div class="about-content">
-            <div class="about-photo">
-              <img src="images/yourphoto.jpeg" alt="Subhechhya Sigdel" />
-            </div>
-            <div class="about-text">
-              <h2>About Me</h2>
-              <p>
-                I'm a BSc CSIT student from Nepal, obsessed with building
-                scalable APIs and engaging web applications. I love clean code,
-                modern design, and solving real-world problems.
-              </p>
-              <p>
-                Currently building at the intersection of backend performance
-                and frontend elegance.
-              </p>
-              <a
-                href="SubhechhyaSigdel_Resume_Sept.pdf"
-                target="_blank"
-                class="btn btn-primary">
-                <i class="fas fa-download"></i> Download Resume
-              </a>
-            </div>
-          </div>
-          <div class="skills-preview">
-            <h3>Tech Stack</h3>
-            <div class="tech-showcase">
-              <div class="tech-item">Python</div>
-              <div class="tech-item">FastAPI</div>
-              <div class="tech-item">React</div>
-              <div class="tech-item">JavaScript</div>
-              <div class="tech-item">PostgreSQL</div>
-              <div class="tech-item">WebSocket</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
     <section id="projects" class="projects">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Live demos and production-ready code</p>
+        <div class="section-header center">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Selected work.</p>
         </div>
         <div class="projects-grid">
-          <div class="project-card premium">
-            <div class="project-status">Live</div>
-            <div class="project-icon-large">🌐</div>
-            <h3>Social Media API</h3>
-            <p class="project-desc">
-              Fast, scalable REST API with real-time notifications. Auth, posts,
-              comments & likes.
-            </p>
-            <div class="project-meta">
-              <span class="meta-item">Python</span>
-              <span class="meta-item">FastAPI</span>
-              <span class="meta-item">PostgreSQL</span>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="project-status live">Live</span>
+              <span class="project-type">API</span>
             </div>
-            <div class="project-actions">
+            <h3>Social Media API</h3>
+            <p>FastAPI backend for posts, comments, likes, and live updates.</p>
+            <div class="project-meta">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
               <a
                 href="https://learning-fastapi-8e1s.onrender.com"
                 target="_blank"
-                class="action-btn primary">
-                🌐 View Live
+                rel="noopener noreferrer">
+                View Live
               </a>
               <a
                 href="https://github.com/SubhechhyaSigdel/social-media-api"
                 target="_blank"
-                class="action-btn">
-                View Code
+                rel="noopener noreferrer">
+                Code
               </a>
             </div>
-          </div>
+          </article>
 
-          <div class="project-card">
-            <div class="project-status">Deployed</div>
-            <div class="project-icon-large">💬</div>
-            <h3>WebSocket Chat</h3>
-            <p class="project-desc">
-              Real-time chat with typing indicators, online status & message
-              history.
-            </p>
-            <div class="project-meta">
-              <span class="meta-item">Python</span>
-              <span class="meta-item">WebSocket</span>
-              <span class="meta-item">Vanilla JS</span>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="project-status">Deployed</span>
+              <span class="project-type">Realtime</span>
             </div>
-            <div class="project-actions">
+            <h3>WebSocket Chat</h3>
+            <p>Real-time chat with typing indicators and message history.</p>
+            <div class="project-meta">
+              <span>Python</span>
+              <span>WebSocket</span>
+              <span>Vanilla JS</span>
+            </div>
+            <div class="project-links">
               <a
                 href="https://github.com/SubhechhyaSigdel/websocket-chat"
                 target="_blank"
-                class="action-btn">
-                View Code
+                rel="noopener noreferrer">
+                Code
               </a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -256,10 +170,8 @@
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-header center">
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-subtitle">
-            Always open to new projects and collaborations
-          </p>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Direct links.</p>
         </div>
         <div class="contact-grid">
           <a href="mailto:subhechhyasigdel6@gmail.com" class="contact-card">
@@ -295,10 +207,9 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <p>Crafted with ❤️ by Subhechhya Sigdel © 2024</p>
+        <p>Crafted with ❤️ by Subhechhya Sigdel</p>
       </div>
     </footer>
 
