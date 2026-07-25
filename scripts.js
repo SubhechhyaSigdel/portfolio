@@ -5,9 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   ).matches;
   initNavigation(prefersReducedMotion);
   observeReveal(prefersReducedMotion);
+  observeActiveSection();
   setupScrollEffects(scrollProgress, prefersReducedMotion);
   addInteractions();
 });
+
+function setActiveNavLink(sectionId) {
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${sectionId}`,
+    );
+  });
+}
 
 function initNavigation(prefersReducedMotion) {
   const navLinks = document.querySelectorAll(".nav-link");
@@ -82,8 +92,6 @@ function observeReveal(prefersReducedMotion) {
 
 function setupScrollEffects(scrollProgress, prefersReducedMotion) {
   const navbar = document.querySelector(".navbar");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const sections = document.querySelectorAll("section");
   let ticking = false;
 
   const updateState = () => {
@@ -93,30 +101,12 @@ function setupScrollEffects(scrollProgress, prefersReducedMotion) {
       navbar.classList.toggle("scrolled", scrollY > 40);
     }
 
-    let currentSection = "hero";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionBottom = sectionTop + section.clientHeight;
-
-      if (scrollY >= sectionTop && scrollY < sectionBottom) {
-        currentSection = section.getAttribute("id") || currentSection;
-      }
-    });
-
     if (
       scrollY + window.innerHeight >=
       document.documentElement.scrollHeight - 80
     ) {
-      currentSection = "contact";
+      setActiveNavLink("contact");
     }
-
-    navLinks.forEach((link) => {
-      link.classList.toggle(
-        "active",
-        link.getAttribute("href") === `#${currentSection}`,
-      );
-    });
 
     if (scrollProgress) {
       const maxScroll =
@@ -141,6 +131,37 @@ function setupScrollEffects(scrollProgress, prefersReducedMotion) {
   );
 
   updateState();
+}
+
+function observeActiveSection() {
+  const sections = document.querySelectorAll("section");
+
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+
+      if (!visibleEntries.length) {
+        return;
+      }
+
+      visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const sectionId = visibleEntries[0].target.getAttribute("id");
+
+      if (sectionId) {
+        setActiveNavLink(sectionId);
+      }
+    },
+    {
+      rootMargin: "-42% 0px -42% 0px",
+      threshold: [0.15, 0.3, 0.5],
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
 }
 
 function createScrollProgress() {

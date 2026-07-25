@@ -143,7 +143,7 @@ a {
   min-height: calc(100vh - 72px);
   display: grid;
   place-items: center;
-  padding: 4rem 0 3rem;
+  padding: 3rem 0 1.5rem;
 }
 
 .hero-content {
@@ -204,6 +204,28 @@ a {
   flex-wrap: wrap;
   gap: 0.85rem;
   margin-top: 2rem;
+}
+
+.about {
+  padding: 0.5rem 0 3rem;
+}
+
+.about-card {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.4rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .projects {
@@ -395,9 +417,12 @@ a {
 }
 
 .footer {
-  padding: 0 0 2rem;
   text-align: center;
+  padding: 1.5rem 0 2rem;
   color: var(--muted);
+  background: rgba(244, 249, 252, 0.76);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(18px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -445,7 +470,7 @@ a {
   }
 
   .hero {
-    padding: 3rem 0 2.5rem;
+    padding: 2.5rem 0 1.25rem;
   }
 
   .hero-buttons {
@@ -454,6 +479,11 @@ a {
 
   .projects {
     padding-bottom: 2.75rem;
+  }
+
+  .about {
+    padding-top: 0.25rem;
+    padding-bottom: 2.5rem;
   }
 
   .contact {
@@ -469,7 +499,7 @@ a {
   }
 
   .hero-content {
-    padding: 1.25rem;
+    padding: 1.1rem;
     border-radius: 22px;
   }
 
@@ -484,6 +514,11 @@ a {
   .hero-buttons {
     flex-direction: column;
     gap: 0.7rem;
+  }
+
+  .about-card {
+    padding: 1.05rem;
+    border-radius: 18px;
   }
 
   .projects-grid,
