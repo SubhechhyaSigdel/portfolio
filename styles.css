@@ -312,7 +312,7 @@ body::after {
   position: fixed;
 
   /* Slightly more left than before */
-  right: 98px;
+  right: 128px;
 
   top: 45%;
 
