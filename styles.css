@@ -344,11 +344,11 @@ body::after {
   align-items: center;
   justify-content: center;
 
-  background: rgb(142, 142, 175);
+  background: #72a4c5;
 
   border: 1px solid var(--border);
 
-  color: var(--text);
+  color: #0f172a;
 
   text-decoration: none;
 
