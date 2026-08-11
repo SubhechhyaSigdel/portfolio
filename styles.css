@@ -1,6 +1,7 @@
 /* =========================================================
    ROOT VARIABLES
 ========================================================= */
+
 :root {
   --bg: #eef6fb;
   --surface: #ffffff;
@@ -15,25 +16,11 @@
   --accent: #3d789f;
   --accent-soft: rgba(61, 120, 159, 0.12);
 
-  /* Full page square grid */
   --grid: rgba(61, 120, 159, 0.16);
 
   --shadow: 0 20px 60px rgba(31, 50, 69, 0.08);
 
   --max-width: 1050px;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  overflow: hidden;
-}
-
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
 /* =========================================================
@@ -73,8 +60,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
 body {
   min-height: 100vh;
+  margin: 0;
 
   background: var(--bg);
   color: var(--text);
@@ -82,8 +75,12 @@ body {
   font-family: "DM Sans", sans-serif;
 
   overflow-x: hidden;
+  overflow-y: hidden;
 
   position: relative;
+
+  display: flex;
+  flex-direction: column;
 
   transition:
     background 0.35s ease,
@@ -94,26 +91,28 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.logo {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: -2px;
-  color: var(--accent);
+
+.intro-content {
+  min-width: 0;
 }
+
+.intro-content h1,
+.intro-content h2,
+.intro-content p {
+  overflow-wrap: break-word;
+}
+
 /* =========================================================
-   FULL PAGE SQUARE GRID
+   BACKGROUND GRID
 ========================================================= */
 
 body::before {
   content: "";
 
   position: fixed;
-
   inset: 0;
 
   z-index: -2;
-
   pointer-events: none;
 
   background-image:
@@ -121,100 +120,19 @@ body::before {
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
 
   background-size: 42px 42px;
-
-  opacity: 1;
 }
 
-/* =========================================
-   TOP LEFT NAME
-========================================= */
-
-.site-name {
-  font-family: "Sora", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: -0.6px;
-  color: rgb(107, 108, 207);
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.site-name:hover {
-  color: var(--accent);
-}
-
-/* =========================================
-   PROFILE IMAGE
-========================================= */
-.profile-image {
-  position: relative;
-
-  width: 190px;
-  height: 250px;
-
-  object-fit: cover;
-  object-position: center;
-
-  display: block;
-
-  z-index: 2;
-
-  border-radius: 14px;
-
-  border: 1px solid var(--border);
-
-  background: var(--surface);
-
-  box-shadow: 0 10px 30px rgba(31, 50, 69, 0.1);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    filter 0.35s ease;
-}
-
-/* Subtle hover effect */
-.profile-image:hover {
-  transform: translateY(-4px);
-
-  filter: brightness(1.03);
-
-  box-shadow: 0 16px 35px rgba(31, 50, 69, 0.14);
-}
-
-/* Dark mode */
-body[data-theme="dark"] .profile-image {
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-}
-
-body[data-theme="dark"] .profile-image:hover {
-  box-shadow: 0 18px 40px rgba(192, 132, 252, 0.16);
-}
-
-/* Mobile */
-@media (max-width: 650px) {
-  .profile-image {
-    width: 160px;
-    height: 210px;
-
-    border-radius: 12px;
-  }
-}
 /* =========================================================
-   VERY SUBTLE BACKGROUND GLOW
+   BACKGROUND GLOW
 ========================================================= */
 
 body::after {
   content: "";
 
   position: fixed;
-
   inset: 0;
 
   z-index: -1;
-
   pointer-events: none;
 
   background: radial-gradient(
@@ -227,31 +145,29 @@ body::after {
 /* =========================================================
    TOP BAR
 ========================================================= */
-
 .topbar {
   width: 100%;
-
   padding: 28px 40px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   position: relative;
-
   z-index: 20;
+
+  box-sizing: border-box;
 }
 
 .logo {
   font-family: "Sora", sans-serif;
 
   font-size: 24px;
-
   font-weight: 700;
 
   letter-spacing: -1px;
+
+  color: var(--text);
 }
 
 .logo span {
@@ -267,17 +183,13 @@ body::after {
   height: 42px;
 
   border: 1px solid var(--border);
-
   border-radius: 50%;
 
   background: var(--surface);
-
   color: var(--text);
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   cursor: pointer;
@@ -293,7 +205,6 @@ body::after {
   transform: rotate(20deg);
 
   border-color: var(--accent);
-
   color: var(--accent);
 }
 
@@ -311,17 +222,13 @@ body::after {
 .social-sidebar {
   position: fixed;
 
-  /* Slightly more left than before */
   right: 128px;
-
   top: 45%;
 
   transform: translateY(-50%);
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   gap: 12px;
@@ -329,30 +236,23 @@ body::after {
   z-index: 100;
 }
 
-/* =========================================================
-   SOCIAL ICON BUTTON
-========================================================= */
-
 .social-sidebar a {
-  width: 65px;
-  height: 65px;
+  width: 52px;
+  height: 52px;
 
-  border-radius: 14px;
+  border-radius: 15px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  background: #72a4c5;
+  background: rgba(114, 164, 197, 0.9);
 
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 
   color: #0f172a;
 
-  text-decoration: none;
-
-  box-shadow: 0 8px 24px rgba(31, 50, 69, 0.08);
+  box-shadow: 0 8px 25px rgba(31, 50, 69, 0.12);
 
   transition:
     transform 0.25s ease,
@@ -362,28 +262,6 @@ body::after {
     box-shadow 0.25s ease;
 }
 
-/* =========================================================
-   SOCIAL ICON
-========================================================= */
-
-.social-sidebar a svg {
-  width: 22px;
-  height: 22px;
-
-  display: block;
-
-  flex-shrink: 0;
-
-  transition:
-    transform 0.25s ease,
-    color 0.25s ease;
-}
-
-/* =========================================================
-   SOCIAL ICON HOVER
-   Dark button + white icon
-========================================================= */
-
 .social-sidebar a:hover {
   color: #ffffff;
 
@@ -391,29 +269,34 @@ body::after {
 
   border-color: #1f3245;
 
-  /* Move slightly left */
-  transform: translateX(-8px) scale(1.05);
+  transform: translateX(-8px) scale(1.06);
 
-  box-shadow: 0 12px 30px rgba(31, 50, 69, 0.25);
+  box-shadow: 0 14px 32px rgba(31, 50, 69, 0.25);
+}
+
+.social-sidebar a svg {
+  width: 20px;
+  height: 20px;
+
+  transition: transform 0.25s ease;
 }
 
 .social-sidebar a:hover svg {
-  transform: scale(1.08);
+  transform: scale(1.12);
 }
 
-/* =========================================================
-   DARK MODE SOCIAL HOVER
-========================================================= */
+/* Dark mode */
 
 body[data-theme="dark"] .social-sidebar a {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background: #c084fc;
+  border-color: #c084fc;
 }
 
 body[data-theme="dark"] .social-sidebar a:hover {
   color: #100d18;
 
-  background: #c084fc;
-
+  background: #d2ced5;
   border-color: #c084fc;
 
   transform: translateX(-8px) scale(1.05);
@@ -425,12 +308,16 @@ body[data-theme="dark"] .social-sidebar a:hover {
    MAIN
 ========================================================= */
 .main {
-  width: min(var(--max-width), calc(100% - 40px));
+  width: min(1100px, calc(100% - 80px));
 
   margin: 0 auto;
 
-  /* reduce bottom space */
-  padding: 50px 0 15px;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px 0;
 
   position: relative;
   z-index: 1;
@@ -441,23 +328,24 @@ body[data-theme="dark"] .social-sidebar a:hover {
 ========================================================= */
 
 .intro {
+  width: 100%;
+
   display: grid;
 
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 280px minmax(0, 1fr);
 
-  gap: 80px;
+  gap: 70px;
 
   align-items: center;
-
-  min-height: 450px;
 }
 
 /* =========================================================
-   PORTRAIT FRAME
+   PORTRAIT
 ========================================================= */
 
 .portrait-frame {
   position: relative;
+
   width: 280px;
   height: 340px;
 
@@ -469,18 +357,12 @@ body[data-theme="dark"] .social-sidebar a:hover {
 .panel {
   position: relative;
 
-  width: 240px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
 
-  background: var(--surface);
+  background: transparent;
 
-  border: 1px solid var(--border);
-
-  border-radius: 40px;
-
-  box-shadow: var(--shadow);
-
-  overflow: hidden;
+  overflow: visible;
 
   display: flex;
   align-items: center;
@@ -488,54 +370,69 @@ body[data-theme="dark"] .social-sidebar a:hover {
 }
 
 /* =========================================================
-   PORTRAIT PANEL
+   PROFILE IMAGE
 ========================================================= */
 .profile-image {
-  width: 240px;
-  height: 300px;
-  align-items: center;
+  width: 230px;
+  height: 290px;
+
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%;
+
   display: block;
-  justify-content: center;
-  border-radius: 34px;
+
+  border-radius: 18px;
+
   border: 1px solid var(--border);
-  position: relative;
-  z-index: 2;
-}
 
-/* =========================================================
-   GRID INSIDE PORTRAIT
-========================================================= */
-
-.panel::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background-image:
-    linear-gradient(to right, var(--grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-
-  background-size: 24px 24px;
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   PORTRAIT SVG
-========================================================= */
-
-.portrait {
-  position: relative;
-
-  width: 190px;
-
-  color: var(--accent);
+  box-shadow: 0 18px 45px rgba(31, 50, 69, 0.13);
 
   z-index: 2;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.profile-image:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 24px 50px rgba(31, 50, 69, 0.18);
+}
+/* .profile-image {
+  width: 230px;
+  height: 290px;
+
+  object-fit: cover;
+  object-position: center 20%;
+
+  display: block;
+
+  border-radius: 18px;
+
+  border: 1px solid var(--border);
+
+  box-shadow: 0 15px 40px rgba(31, 50, 69, 0.12);
+
+  z-index: 2;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.profile-image:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 20px 45px rgba(31, 50, 69, 0.18);
+} */
+
+body[data-theme="dark"] .profile-image {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+body[data-theme="dark"] .profile-image:hover {
+  box-shadow: 0 18px 40px rgba(192, 132, 252, 0.16);
 }
 
 /* =========================================================
@@ -548,7 +445,6 @@ body[data-theme="dark"] .social-sidebar a:hover {
   font-family: "JetBrains Mono", monospace;
 
   font-size: 12px;
-
   font-weight: 500;
 
   letter-spacing: 2px;
@@ -557,7 +453,7 @@ body[data-theme="dark"] .social-sidebar a:hover {
 }
 
 h1 {
-  font-family: "Sora", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(48px, 7vw, 82px);
 
@@ -566,6 +462,13 @@ h1 {
   letter-spacing: -4px;
 
   margin-bottom: 18px;
+
+  max-width: 500px;
+}
+
+h1 .accent {
+  display: block;
+  color: var(--accent);
 }
 
 h2 {
@@ -606,7 +509,6 @@ h2 {
   display: inline-block;
 
   width: 7px;
-
   height: 0.9em;
 
   margin-left: 5px;
@@ -635,85 +537,133 @@ h2 {
 ========================================================= */
 
 footer {
-  width: min(var(--max-width), calc(100% - 40px));
+  width: min(var(--max-width), calc(100% - 80px));
 
-  /* More space between main content and footer */
-  margin: 100px 0 auto 200px;
+  margin: 20px auto 0;
 
-  padding: 58px 0 135px;
+  padding: 28px 0 35px;
 
   border-top: 1px solid var(--border);
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-  gap: 8px;
 
   text-align: center;
 
   font-family: "Sora", sans-serif;
 
-  font-size: 16px;
+  font-size: 12px;
 
   letter-spacing: 0.3px;
 
   color: var(--text-muted);
+
+  position: relative;
+  z-index: 2;
 }
 
-footer span:last-child {
-  color: var(--text-soft);
+footer span {
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   TABLETS / SMALL LAPTOPS
+========================================================= */
+
+@media (max-width: 1000px) {
+  .main {
+    width: min(900px, calc(100% - 60px));
+  }
+
+  .intro {
+    grid-template-columns: 240px minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+  .portrait-frame {
+    width: 240px;
+    height: 300px;
+  }
+
+  .profile-image {
+    width: 210px;
+    height: 270px;
+  }
+
+  h1 {
+    font-size: clamp(46px, 7vw, 68px);
+  }
+
+  h2 {
+    font-size: clamp(24px, 3.5vw, 32px);
+  }
+
+  .intro-content > p {
+    font-size: 16px;
+  }
+
+  .social-sidebar {
+    right: 18px;
+  }
+
+  .social-sidebar a {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
-  .social-sidebar {
-    right: 24px;
-  }
+@media (max-width: 800px) {
+  .main {
+    width: calc(100% - 100px);
 
-  .social-sidebar a {
-    width: 48px;
-    height: 48px;
-
-    border-radius: 14px;
-  }
-
-  .social-sidebar a svg {
-    width: 20px;
-    height: 20px;
+    padding-top: 45px;
   }
 
   .intro {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-    min-height: auto;
+    display: block;
   }
 
   .portrait-frame {
-    display: flex;
-
-    justify-content: center;
+    display: none;
   }
 
   .intro-content {
-    text-align: center;
+    width: 100%;
   }
 
   .intro-content > p {
-    margin-left: auto;
+    max-width: 620px;
 
+    margin-left: auto;
     margin-right: auto;
   }
 
+  .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
   footer {
-    margin-top: 80px;
+    width: calc(100% - 60px);
+
+    margin-top: 45px;
+
+    padding: 25px 0 30px;
+
+    font-size: 11px;
   }
 }
 
@@ -721,80 +671,147 @@ footer span:last-child {
    MOBILE
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .topbar {
-    padding: 20px;
+    padding: 18px 20px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
   }
 
   .main {
-    width: calc(100% - 28px);
+    width: calc(100% - 80px);
 
-    padding-top: 35px;
-
-    /*
-      Space reserved for sidebar
-    */
-    padding-right: 55px;
+    padding: 35px 0 50px;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: clamp(40px, 12vw, 52px);
 
     letter-spacing: -2.5px;
   }
 
+  h1 .accent {
+    display: block;
+  }
+
   h2 {
-    font-size: 25px;
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.8px;
   }
 
   .intro-content > p {
     font-size: 15px;
+
+    line-height: 1.7;
   }
 
-  .panel {
-    width: 230px;
+  .eyebrow {
+    font-size: 11px;
 
-    height: 270px;
+    letter-spacing: 1.7px;
   }
-
-  .portrait {
-    width: 155px;
-  }
-
-  /* Social sidebar */
 
   .social-sidebar {
-    right: 14px;
+    right: 10px;
 
-    gap: 10px;
+    gap: 9px;
   }
 
   .social-sidebar a {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
 
-    border-radius: 13px;
+    border-radius: 12px;
   }
 
   .social-sidebar a svg {
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
   }
 
-  /* Footer */
-
   footer {
-    width: calc(100% - 28px);
+    width: calc(100% - 40px);
 
-    margin-top: 70px;
+    margin-top: 40px;
 
-    padding-bottom: 35px;
-
-    flex-direction: column;
-
-    gap: 5px;
+    padding: 22px 0 28px;
 
     font-size: 10px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+  .topbar {
+    padding: 16px;
+  }
+
+  .main {
+    width: calc(100% - 68px);
+
+    padding-top: 28px;
+  }
+
+  h1 {
+    font-size: 38px;
+
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .intro-content > p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+  .social-sidebar {
+    right: 7px;
+
+    gap: 7px;
+  }
+
+  .social-sidebar a {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+  }
+
+  .social-sidebar a svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  footer {
+    width: calc(100% - 32px);
+
+    margin-top: 35px;
+
+    padding: 20px 0 25px;
+
+    font-size: 9px;
   }
 }
 
@@ -802,31 +819,35 @@ footer span:last-child {
    VERY SMALL PHONES
 ========================================================= */
 
-@media (max-width: 380px) {
-  .social-sidebar {
-    right: 8px;
+@media (max-width: 350px) {
+  .main {
+    width: calc(100% - 58px);
+  }
 
-    gap: 8px;
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .intro-content > p {
+    font-size: 13px;
+  }
+
+  .social-sidebar {
+    right: 5px;
   }
 
   .social-sidebar a {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 12px;
+    width: 34px;
+    height: 34px;
   }
 
   .social-sidebar a svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .main {
-    padding-right: 45px;
-  }
-
-  footer {
-    margin-top: 60px;
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -839,9 +860,7 @@ footer span:last-child {
   *::before,
   *::after {
     animation: none !important;
-
     transition: none !important;
-
     scroll-behavior: auto !important;
   }
 }
