@@ -611,6 +611,11 @@ footer::before {
 
   .social-sidebar {
     right: 18px;
+    top: 42%;
+  }
+
+  .theme-toggle {
+    margin: 0 0 0 40px;
   }
 
   .social-sidebar a {
@@ -640,6 +645,7 @@ footer::before {
   .theme-toggle {
     width: 42px;
     height: 42px;
+    margin: 0 0 0 10px;
   }
 
   .main {
@@ -749,7 +755,7 @@ footer::before {
 
     height: 53px;
 
-    padding: 14px 0 20px;
+    padding: 28px 0 20px;
 
     font-size: 10px;
   }
@@ -774,6 +780,7 @@ footer::before {
   .theme-toggle {
     width: 38px;
     height: 38px;
+    margin: 0 0 0 10px;
   }
 
   .theme-toggle svg {
