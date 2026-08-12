@@ -104,3 +104,30 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = new Date().getFullYear();
   }
 });
+
+/* =========================================
+   ALIGN FOOTER LINE WITH GRID
+========================================= */
+
+function alignFooterToGrid() {
+  const footer = document.querySelector("footer");
+
+  if (!footer) return;
+
+  const gridSize = 42;
+
+  const footerTop = footer.getBoundingClientRect().top;
+
+  const nearestGridLine =
+    Math.round(footerTop / gridSize) * gridSize;
+
+  const offset = nearestGridLine - footerTop;
+
+  footer.style.setProperty(
+    "--footer-grid-offset",
+    `${offset}px`
+  );
+}
+
+window.addEventListener("load", alignFooterToGrid);
+window.addEventListener("resize", alignFooterToGrid);
