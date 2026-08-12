@@ -97,4 +97,10 @@ socialLinks.forEach((link) => {
    DYNAMIC COPYRIGHT YEAR
 ========================================= */
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const yearElement = document.getElementById("year");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+});
