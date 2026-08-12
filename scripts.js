@@ -92,3 +92,9 @@ socialLinks.forEach((link) => {
     link.blur();
   });
 });
+
+/* =========================================
+   DYNAMIC COPYRIGHT YEAR
+========================================= */
+
+document.getElementById("year").textContent = new Date().getFullYear();

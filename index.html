@@ -23,8 +23,9 @@
       property="og:description"
       content="Subhechhya Sigdel - Full Stack Developer focused on clean, minimal web experiences." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
-
+    <meta
+      property="og:image"
+      content="https://subhechhyasigdel.com.np/images/og-image.jpg" />
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -36,9 +37,9 @@
 
     <title>Subhechhya Sigdel</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link
+    <!-- <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet" />
+      rel="stylesheet" /> -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
@@ -55,16 +56,16 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Subhechhya Sigdel",
-        "url": "https://yourwebsite.com",
-        "image": "https://yourwebsite.com/images/yourphoto.jpeg",
+        "url": "https://subhechhyasigdel.com.np",
+        "image": "https://subhechhyasigdel.com.np/images/subey.png",
         "jobTitle": "Full Stack Developer",
         "worksFor": {
           "@type": "Organization",
           "name": "Self-Employed"
         },
         "sameAs": [
-          "https://github.com/yourprofile",
-          "https://linkedin.com/in/yourprofile",
+          "https://github.com/SubhechhyaSigdel",
+          "https://www.linkedin.com/in/subhechhya-sigdel-4281b0314/",
           "https://twitter.com/yourprofile"
         ],
         "description": "Subhechhya Sigdel is a Full Stack Developer building modern, scalable web applications with a focus on simplicity and performance."
@@ -78,7 +79,6 @@
       <div class="logo"><span><</span> S <span>></span></div>
 
       <button class="theme-toggle" aria-label="Toggle theme">
-        <i class="fa-solid fa-moon"></i>
       </button>
     </header>
 
@@ -192,9 +192,8 @@
             <span class="accent"> Subhechhya. </span>
           </h1>
 
-          <h2>
-            I turn ideas into useful products.
-            <span class="cursor-blink"></span>
+          <h2 class="hero-title">
+            I turn ideas into useful products.<span class="cursor-blink"></span>
           </h2>
 
           <p>
@@ -208,7 +207,7 @@
 
     <!-- FOOTER -->
     <footer>
-      <span> © 2026 Subhechhya Sigdel </span>
+      <span>© <span id="year"></span> Subhechhya Sigdel</span>
     </footer>
 
     <script src="scripts.js"></script>
