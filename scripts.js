@@ -118,16 +118,53 @@ function alignFooterToGrid() {
 
   const footerTop = footer.getBoundingClientRect().top;
 
-  const nearestGridLine =
-    Math.round(footerTop / gridSize) * gridSize;
+  const nearestGridLine = Math.round(footerTop / gridSize) * gridSize;
 
   const offset = nearestGridLine - footerTop;
 
-  footer.style.setProperty(
-    "--footer-grid-offset",
-    `${offset}px`
-  );
+  footer.style.setProperty("--footer-grid-offset", `${offset}px`);
 }
 
 window.addEventListener("load", alignFooterToGrid);
 window.addEventListener("resize", alignFooterToGrid);
+/* =========================================
+   FEATURED WORK
+========================================= */
+
+const workToggle = document.querySelector(".work-toggle");
+const featuredWork = document.querySelector(".featured-work");
+
+function setFeaturedWork(open) {
+  if (!workToggle || !featuredWork) return;
+
+  workToggle.classList.toggle("is-open", open);
+  featuredWork.classList.toggle("is-open", open);
+
+  workToggle.setAttribute("aria-expanded", String(open));
+  featuredWork.setAttribute("aria-hidden", String(!open));
+  workToggle.setAttribute(
+    "aria-label",
+    open ? "Close featured work" : "Open featured work",
+  );
+}
+
+if (workToggle && featuredWork) {
+  workToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setFeaturedWork(!featuredWork.classList.contains("is-open"));
+  });
+
+  featuredWork.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  document.addEventListener("click", () => {
+    setFeaturedWork(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setFeaturedWork(false);
+    }
+  });
+}
