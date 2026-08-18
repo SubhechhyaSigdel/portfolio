@@ -685,7 +685,7 @@ body[data-theme="dark"] .work-toggle.is-open {
   font-family: "JetBrains Mono", monospace;
   font-size: 8px;
 
-  color: var(--text-soft);
+  color: black;
 
   transition:
     color 0.2s ease,
